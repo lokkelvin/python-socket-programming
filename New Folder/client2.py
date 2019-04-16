@@ -24,7 +24,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ADDR,PORT))
     #print "[client] Requesting a.jpg"
-    s.sendall(get_request('a.jpg'))
+    s.send(b'GET /a.jpg HTTP/1.1\r\nHost: 127.0.0.1:12345\r\nConnection: keep-alive\r\n\n')
     recv_file(s,'received.jpg')
     #print "[client] Received a.jpg"
     s.close()
@@ -34,7 +34,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ADDR,PORT))
     #print "[client] Requesting b.mp3"
-    s.sendall(get_request('b.mp3'))
+    s.send(b'GET /b.mp3 HTTP/1.1\r\nHost: 127.0.0.1:12345\r\nConnection: keep-alive\r\n\n')
     recv_file(s,'received.mp3')
     #print "[client] Received b.mp3"
     s.close()
@@ -44,7 +44,7 @@ def main():
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ADDR,PORT))
     #print "[client] Requesting c.txt"
-    s.sendall(get_request('c.txt'))
+    s.send(b'GET /c.txt HTTP/1.1\r\nHost: 127.0.0.1:12345\r\nConnection: keep-alive\r\n\n')
     recv_file(s, 'received.txt')
     #print "[client] Received c.txt"
     s.close()

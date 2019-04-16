@@ -49,6 +49,7 @@ def main():
     print "a.jpg: {:.6f} ms".format((t2-t1)/10e-3)
     print "b.mp3: {:.6f} ms".format((t3-t2)/10e-3)
     print "c.txt: {:.6f} ms".format((t4-t3)/10e-3)
+    print "total: {:.6f} ms".format((t4-t1)/10e-3)
     
   
 def echo(s):
@@ -78,4 +79,5 @@ def recv_file(s,filename):
 
 
 if __name__ == '__main__':
+    print "Persistent"
     main()
