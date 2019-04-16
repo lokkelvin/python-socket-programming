@@ -157,7 +157,6 @@ if __name__ == '__main__':
     if len(sys.argv)!= 3:
         print "Too few arguments"
         print "Usage: <IP Address> <Port number>"
-        print "option: 2 for non persistent HTTP"
         print "E.g: $ python client.py 127.0.0.1 55055 "
         sys.exit(0)
     ADDR = sys.argv[1]
